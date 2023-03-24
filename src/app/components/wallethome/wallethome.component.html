@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-sm navbar-light">
+    <ul class="navbar-nav">
+        <li class="nav-item"><a routerLink="/home" class="nav-link">Home</a></li>
+        <li class="nav-item"><a routerLink="/funds" class="nav-link">Add Funds</a></li>
+        <li class="nav-item"><a routerLink="/transfer" class="nav-link">Transfer</a></li>
+        <li class="nav-item"><a routerLink="/withdraw" class="nav-link">Withdraw</a></li>
+        <li class="nav-item">
+          <input type="text" class="inp" [(ngModel)]="query" id="queryId" name="query">
+        </li>
+      
+
+  
+    </ul>
+  </nav>
+<div class="container">
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th (click)="changeSortByFiled('id')">ID</th>
+                <th (click)="changeSortByFiled('name')">Name</th>
+                <th (click)="changeSortByFiled('balance')">Balance</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Actions</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let wal of wallet | sort : field :'asc' | search:query">
+                <td>{{wal.id}}</td>
+                <td>{{wal.name}}</td>
+                <td>{{wal.balance}}</td>
+                <td>{{wal.email}}</td>
+                <td>{{wal.password}}</td>
+                <td>
+                    <input class="btn update" type="button" (click)="updateWallet(wal)" value="Update">
+                    <input class="btn delete" type="button" (click)="deleteWallet(wal.id)" value="Delete">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div *ngIf="msg" class="alert alert-success">
+        <p>{{msg}}</p>
+    </div>
+    <div *ngIf="errmsg" class="alert alert-danger">
+        <p>{{errmsg}}</p>
+    </div>
+</div>

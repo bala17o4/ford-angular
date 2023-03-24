@@ -1,0 +1,21 @@
+.btn{
+    transition-duration: 0.3s;
+    border: 1px solid #666464;
+    /* padding: 5%; */
+    /* margin: 1%; */
+}
+
+.update{
+    margin-right: 1%;
+}
+
+.btn:hover{
+    background-color: #6dc3da;
+    color: white;
+    border: 1px solid #6dc3da;
+}
+
+.inp{
+    border-color: transparent;
+    border-radius: 3px;
+}

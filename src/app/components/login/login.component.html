@@ -1,0 +1,43 @@
+<!-- <section id="login">
+    <div class="login-box">
+        <h2>Login</h2>
+        <form #loginForm="ngForm">
+            <div class="user-box">
+                <input type="text" [(ngModel)]="wallet.name" #nameRef="ngModel" name="name" id="name" required>
+                <div *ngIf="nameRef.invalid && (nameRef.touched || nameRef.dirty)">
+                    <p *ngIf="nameRef.errors?.['required']" class="text-danger">Name is required, cant be balnk.</p>
+
+                </div>
+                <label>Name</label>
+            </div>
+            <div class="user-box">
+                <input type="password" [(ngModel)]="wallet.password"  name="password" id="password" required>
+                <label>Password</label>
+            </div>
+        </form>
+    </div>
+</section> -->
+<section id="login">
+    <div class="login">
+        <h2 class="login-header">Login</h2>
+        <form #loginForm="ngForm" class="login-container">
+            <!-- <p><input type="text" [(ngModel)]="id" #idRef="ngModel" name="id" id="id" placeholder="ID" required></p>
+            <div *ngIf="idRef.invalid && (idRef.touched || idRef.dirty)">
+                <p *ngIf="idRef.errors?.['required']">ID is required, cant be blank.</p>
+            </div> -->
+            <p><input type="text" [(ngModel)]="wallet.name" #nameRef="ngModel" name="name" id="name" placeholder="Name" required></p>
+            <div *ngIf="nameRef.invalid && (nameRef.touched || nameRef.dirty)">
+                <p *ngIf="nameRef.errors?.['required']">Name is required, cant be blank.</p>
+            </div>
+            <p><input type="password" [(ngModel)]="wallet.password" #passwordRef="ngModel" name="password" id="password" placeholder="Password" required></p>
+            <div *ngIf="passwordRef.invalid && (passwordRef.touched || passwordRef.dirty)">
+                <p *ngIf="passwordRef.errors?.['required']">Password is required, cant be blank.</p>
+            </div>
+            <p><input type="submit" class="btn btn-secondary" (click) = "submitForm()" [disabled]="!loginForm.valid" value="Login"></p>
+            <p><input type="submit" class="btn btn-info" value="Back" (click) = "back()"></p>
+        </form>
+    </div>
+    <!-- <div *ngIf="errmsg" class="alert alert-danger">
+        <p>{{errmsg}}</p>
+    </div> -->
+</section>

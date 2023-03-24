@@ -1,0 +1,48 @@
+<section id="register">
+    <div class="register-box">
+        <h2>Register</h2>
+        <form #registrationForm = "ngForm">
+            <div class="user-box">
+                <input type="text" [(ngModel)]="wallet.name" #nameRef="ngModel" name="name" id="name"
+                    pattern="[A-Za-z ]{3,}" title="Only chars are allowed,Min 3 char required" required>
+                <div *ngIf="nameRef.invalid && (nameRef.touched || nameRef.dirty)">
+                    <p *ngIf="nameRef.errors?.['required']" class="text-danger">Name is required, cant be balnk.</p>
+                    <p *ngIf="nameRef.errors?.['pattern']" class="text-danger">Name must have at least 3 chars, only chars are
+                          allowed.</p>
+                </div>
+                <label>Name</label>
+            </div>
+            <div class="user-box">
+                <input type="number" [(ngModel)]="wallet.balance" #balanceRef='ngModel' name="balance" id="balance"
+                    min=0 title="enter positive balance" required>
+                <div *ngIf="balanceRef.invalid && (balanceRef.touched || balanceRef.dirty)">
+                    <p *ngIf="balanceRef.errors?.['required']" class="text-danger">balance is required</p>
+                    <p *ngIf="balanceRef.errors?.['min']" class="text-danger">Balance must be positive</p>
+                </div>
+                <label>Balance</label>
+            </div>
+            <div class="user-box">
+                <input type="email" [(ngModel)] = "wallet.email" #emailRef='ngModel' name="email" id="email" email="true" required>
+                <div *ngIf="emailRef.invalid && (emailRef.touched || emailRef.dirty)">
+                    <p *ngIf="emailRef.errors?.['required']" class="text-danger">email is required</p>
+                    <p *ngIf="emailRef.errors?.['email']" class="text-danger">Invalid email format</p>
+                </div>
+                <label>Email</label>
+            </div>
+            <div class="user-box">
+                <input type="password" [(ngModel)]="wallet.password" #passwordRef='ngModel' name="password" id="password"
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&*()_+\-={}\[\]|;:''<>,./?])(?=.*[a-zA-Z]).{8,}$"
+                    title="Password must contain atleast one lowercase, uppercase,digit,special character and atleast 8 characters" required>
+                <div *ngIf="passwordRef.invalid && (passwordRef.touched || passwordRef.dirty)">
+                    <p *ngIf="passwordRef.errors?.['required']" class="text-danger">password is required</p>
+                    <p *ngIf="passwordRef.errors?.['pattern']" class="text-danger">
+                        Password must contain atleast one lowercase,uppercase,special character,digit and not contain whitespace and must be minimum 8 charcters long
+                    </p>
+                </div>
+                <label>Password</label>
+            </div>
+            <input type="submit" class="btn btn-secondary" (click)="onSubmit()" [disabled]="!registrationForm.valid" value="submit">
+            <input type="submit" class="btn btn-info back"  (click)="back()"  value="Back">
+        </form>
+    </div>
+</section>

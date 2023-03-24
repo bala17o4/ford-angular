@@ -1,0 +1,24 @@
+<div class="update">
+<form class="update-container">
+    <div >
+        <label for="id">ID</label>
+        <input type="text" class="form-control" [(ngModel)]="wallet.id" name="id" id="id" disabled>
+    </div>
+    <div class="form-group-mb-2">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" [(ngModel)]="wallet.name" name="name" id="name">
+    </div>
+    <div class="form-group-mb-2">
+        <label for="balance">Balance</label>
+        <input type="number" class="form-control" [(ngModel)]="wallet.balance" name="blaance" id="balance">
+    </div>
+    <div class="form-group-mb-2">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" [(ngModel)]="wallet.email" name="email" id="email">
+    </div>
+
+    <input type="button" class="btn btn-info" (click)="update()" value="Update">
+
+        
+</form>
+</div>

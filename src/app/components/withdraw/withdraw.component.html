@@ -1,0 +1,21 @@
+<section id="withdraw">
+    <div class="withdraw">
+        <h2 class="withdraw-header">withdraw Funds</h2>
+        <form #withdrawForm="ngForm" class="withdraw-container">
+            <p><input type="text" [(ngModel)]="id" #idRef='ngModel' name="id" id="id" placeholder="ID" required></p>
+            <div *ngIf="idRef.invalid && (idRef.touched || idRef.dirty)">
+                <p *ngIf="idRef.errors?.['required']">ID is required, cant be blank.</p>
+            </div>
+            <p><input type="number" [(ngModel)]="amount" #balanceRef="ngModel" name="amount" id="amount" placeholder="Amount" required></p>
+            <div *ngIf="balanceRef.invalid && (balanceRef.touched || balanceRef.dirty)">
+                <p *ngIf="balanceRef.errors?.['required']">Name is required, cant be blank.</p>
+            </div>
+            <p><input type="password" [(ngModel)]="password" #passwordRef="ngModel" name="password" id="password" placeholder="Password" required></p>
+            <div *ngIf="passwordRef.invalid && (passwordRef.touched || passwordRef.dirty)">
+                <p *ngIf="passwordRef.errors?.['required']">Password is required, cant be blank.</p>
+            </div>
+            <p><input type="submit" class="btn btn-secondary" value="Withdraw" (click) = "onSubmit(id,amount,password)" [disabled]="!withdrawForm.valid"></p>
+            <p><input type="submit" class="btn btn-info" value="Back" (click) = "back()"></p>
+        </form>
+    </div>
+</section>

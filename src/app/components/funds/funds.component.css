@@ -1,0 +1,85 @@
+
+
+
+.funds{
+    margin: 16px auto;
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+}
+
+.funds p{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 12px;
+}
+
+.funds-header{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 20px;
+    font-size: 1.4em;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.funds-cotainer{
+    background: #ebebeb;
+    padding: 12px;
+}
+
+.funds input{
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    border-radius: 4px;
+    /* border-width: 1px;
+    border-style: solid; */
+    padding: 14px;
+    outline: 0;
+    font-family: inherit;
+    font-size: 0.95em;
+}
+
+.funds input[type="text"],
+.funds input[type="password"],
+.funds input[type="number"] {
+  background: #fff;
+  /* border-color: #bbb; */
+  color: #555;
+}
+
+.funds input[type="name"]:focus,
+.funds input[type="password"]:focus,
+.funds input[type="number"]:focus{
+  border-color: #888;
+}
+
+.funds input[type="submit"] {
+    background: #28d;
+    border-color: transparent;
+    color: #fff;
+    cursor: pointer;
+}
+  
+/* .funds input[type="submit"]:hover {
+    background: #17c;
+} */
+  
+  /* Buttons' focus effect */
+/* .funds input[type="submit"]:focus {
+    border-color: #05a;
+} */
